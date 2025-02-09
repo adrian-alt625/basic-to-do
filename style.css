@@ -1,0 +1,15 @@
+* {
+  background-color: rgb(67, 67, 67);
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#uploadBtn {
+  color: rgb(206, 19, 19);
+  background-color: rgb(66, 214, 53);
+}
+
+#button-container {
+  border: 10px;
+}

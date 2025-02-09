@@ -1,0 +1,11 @@
+File based To-Do web app
+
+user flow:
+user is prompted to pick between: Upload list (instructions for the format and what will happen) or Create list (description that a new txt file will be made for them)
+* if user selects Upload, a file explorer window opens and they upload their txt file.
+* if user selects Create, a new txt file will be made for them
+
+the screen will change to the to do list editor itself where there will be an entry field connected to a "add" button
+beneath this entry field, there will be the list elements one above the other, each task will have a box to the left of the text to mark as completed, on the right of the task, a delete button
+
+the user can modify the list and then when he is done, can download a new text file with the updated list
