@@ -2,8 +2,8 @@
 "use strict";
 
 //assigning values for the "upload button" and the file input
-const fileInput = document.getElementById("fileInput");
-const upload = document.getElementById("uploadBtn");
+const fileInput = document.querySelector(".fileInput");
+const upload = document.querySelector(".uploadBtn");
 
 //initiating file input (through file explorer) once the "upload" button is pressed
 upload.addEventListener("click", openFE);
@@ -34,4 +34,4 @@ function readFile() {
   };
 }
 
-/* PUSH TO GITHUB */
+// make a function that removes the "startup" elements and adds the to-do-list elements
