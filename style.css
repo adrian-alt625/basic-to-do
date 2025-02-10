@@ -1,3 +1,8 @@
+@font-face {
+  font-family: Poppins;
+  src: url(font/Poppins-SemiBold.ttf);
+}
+
 body {
   background-image: linear-gradient(
     to right,
@@ -6,7 +11,7 @@ body {
   );
   margin: 0;
   padding: 0;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: Poppins;
   height: 100vh; /* Ensures the gradient fills the whole screen */
 }
 
@@ -17,19 +22,20 @@ body {
   left: 50%;
   /* half height and width values */
   margin-top: -125px;
-  margin-left: -150px;
+  margin-left: -200px;
   height: 250px;
-  width: 300px;
+  width: 400px;
   background-color: white;
   border-radius: 25px;
 }
 
 .button-container h3 {
-  background: white;
+  background: rgb(255, 255, 255);
+  color: rgb(163, 0, 163);
   margin: 20px;
-  margin-left: 40px;
+  margin-left: 30px;
   margin-bottom: 0;
-  font-weight: 700;
+  font-size: 24px;
 }
 
 .uploadBtn {
@@ -38,13 +44,15 @@ body {
   width: 100px;
   height: 50px;
   margin: 50px;
-  margin-top: 10%;
+  margin-top: 7%;
   margin-left: 33%;
+  margin-bottom: 45px;
   font-size: 15px;
   font-weight: bold;
   border-radius: 10px;
   box-shadow: 0px 0px 0px transparent;
   border: 0px solid transparent;
+  display: inline-block;
 }
 .uploadBtn:hover {
   background: rgb(208, 156, 0);
@@ -76,5 +84,75 @@ body {
 }
 
 .createBtn:active {
+  background: rgb(32, 152, 72);
+}
+
+.main-container {
+  display: none;
+  background: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* half height and width values */
+  margin-top: -125px;
+  margin-left: -250px;
+  height: fit-content;
+  width: 500px;
+  background-color: white;
+  border-radius: 25px;
+}
+
+.main-container h2 {
+  color: rgb(163, 0, 163);
+  font-size: 30px;
+  margin-left: 30px;
+}
+
+.row-input {
+  margin: 25px;
+}
+
+.row-input input {
+  border: none;
+  border-radius: 20px;
+  background-color: rgb(236, 236, 236);
+  margin-left: 20px;
+  height: 50px;
+  width: 275px;
+  padding-left: 20px;
+  outline: none;
+  font-size: 17px;
+}
+
+.row-input input::placeholder {
+  color: #696969;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.row-input input:focus::placeholder {
+  opacity: 0;
+}
+
+.take-input {
+  color: rgb(255, 255, 255);
+  background: rgb(47, 228, 107);
+  height: 47px;
+  width: 80px;
+  margin-left: 10px;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 16px;
+  box-shadow: 0px 0px 0px transparent;
+  border: 0px solid transparent;
+}
+
+.take-input:hover {
+  background: rgb(40, 192, 91);
+  border-radius: 13px;
+  color: rgb(226, 226, 226);
+}
+
+.take-input:active {
   background: rgb(32, 152, 72);
 }
