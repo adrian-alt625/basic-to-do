@@ -2,6 +2,10 @@
   font-family: Poppins;
   src: url(font/Poppins-SemiBold.ttf);
 }
+@font-face {
+  font-family: Poppins-light;
+  src: url(font/Poppins-Medium.ttf);
+}
 
 body {
   background-image: linear-gradient(
@@ -146,13 +150,44 @@ body {
   box-shadow: 0px 0px 0px transparent;
   border: 0px solid transparent;
 }
-
 .take-input:hover {
   background: rgb(40, 192, 91);
   border-radius: 13px;
   color: rgb(226, 226, 226);
 }
-
 .take-input:active {
   background: rgb(32, 152, 72);
+}
+
+.list li {
+  list-style: none;
+  cursor: pointer;
+  user-select: none;
+  margin-top: 10px;
+  padding-left: 40px;
+  position: relative;
+  font-family: Poppins-light;
+  font-weight: 100;
+  font-size: 17px;
+}
+.list li::before {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background-image: url("check-icons/unchecked-34.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  left: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.list li.checked {
+  color: #555555;
+  text-decoration: line-through;
+}
+.list li.checked::before {
+  background-image: url(check-icons/checked-6.svg);
 }

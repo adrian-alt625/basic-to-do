@@ -6,8 +6,9 @@ const fileInput = document.querySelector(".fileInput");
 const upload = document.querySelector(".uploadBtn");
 const create = document.querySelector(".createBtn");
 const btnContainer = document.querySelector(".button-container");
+const add = document.querySelector(".take-input");
 const main = document.querySelector(".main-container");
-
+const list = document.querySelector(".list");
 //initiating file input (through file explorer) once the "upload" button is pressed
 upload.addEventListener("click", openFE);
 //what happens when "upload" button is pressed
@@ -46,5 +47,19 @@ function change() {
   //adding new elements
   main.style.display = "block";
 }
+
+let input;
+function addToList() {
+  input = document.querySelector(".input").value;
+  if (input != "") {
+    let li = document.createElement("li");
+    let text = document.createTextNode(input);
+    li.appendChild(text);
+    list.appendChild(li);
+    document.querySelector(".input").value = "";
+  }
+}
+
+add.addEventListener("click", addToList);
 
 // ADD A TOGGLE FOR DARK AND LIGHT MODE (CHANGES THE BACKGROUND GRADIENT)
