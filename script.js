@@ -6,10 +6,14 @@ const fileInput = document.querySelector(".fileInput");
 const upload = document.querySelector(".uploadBtn");
 const create = document.querySelector(".createBtn");
 const btnContainer = document.querySelector(".button-container");
+const heading = document.querySelector(".heading");
 const add = document.querySelector(".take-input");
 const main = document.querySelector(".main-container");
+const heading2 = document.querySelector(".heading2");
+const mainInput = document.querySelector(".input");
 const list = document.querySelector(".list");
 const saveBtn = document.querySelector(".save");
+const darkMode = document.querySelector(".dark-mode");
 let todos = [];
 //initiating file input (through file explorer) once the "upload" button is pressed
 upload.addEventListener("click", openFE);
@@ -119,4 +123,9 @@ function downloadFile() {
 
 saveBtn.addEventListener("click", downloadFile);
 
-// ADD A TOGGLE FOR DARK AND LIGHT MODE (CHANGES THE BACKGROUND GRADIENT)
+//dark mode toggle
+function toggleDarkMode() {
+  document.body.classList.toggle("dark-mode");
+}
+
+darkMode.addEventListener("click", toggleDarkMode);
