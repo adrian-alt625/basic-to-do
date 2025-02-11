@@ -234,7 +234,7 @@ body {
 }
 
 #darkBtn {
-  background: url("dark-mode-icons/dark-mode-1.svg") no-repeat center;
+  background: url("dark-mode-icons/1.svg") no-repeat center;
   background-size: contain;
   width: 40px;
   height: 40px;
@@ -243,11 +243,22 @@ body {
   position: fixed;
   top: 20px;
   right: 20px;
+  transition: 0.5s ease;
+  background-color: transparent;
 }
 
 /* dark mode */
 
 .dark-mode #darkBtn {
+  background: url("dark-mode-icons/2.svg") no-repeat center;
+  background-size: contain;
+  width: 40px;
+  height: 40px;
+  border: none;
+  cursor: pointer;
+  position: fixed;
+  top: 20px;
+  right: 20px;
 }
 
 .dark-mode {
