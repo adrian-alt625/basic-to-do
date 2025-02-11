@@ -48,6 +48,8 @@ function change() {
   main.style.display = "block";
 }
 
+add.addEventListener("click", addToList);
+
 let input;
 function addToList() {
   input = document.querySelector(".input").value;
@@ -57,9 +59,18 @@ function addToList() {
     li.appendChild(text);
     list.appendChild(li);
     document.querySelector(".input").value = "";
+    let span = document.createElement("span");
+    span.innerHTML = "&#10006";
+    li.appendChild(span);
   }
 }
 
-add.addEventListener("click", addToList);
+list.addEventListener("click", function (e) {
+  if (e.target.tagName === "LI") {
+    e.target.classList.toggle("checked");
+  } else if (e.target.tagName === "SPAN") {
+    e.target.parentElement.remove();
+  }
+});
 
 // ADD A TOGGLE FOR DARK AND LIGHT MODE (CHANGES THE BACKGROUND GRADIENT)

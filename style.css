@@ -191,3 +191,19 @@ body {
 .list li.checked::before {
   background-image: url(check-icons/checked-6.svg);
 }
+
+.list li span {
+  position: absolute;
+  right: 50px;
+  width: 30px;
+  height: 25px;
+  text-align: center;
+  color: #292929;
+  font-size: 14px;
+  padding-top: 5px;
+}
+
+.list li span:hover {
+  background-color: #e1e1e1;
+  border-radius: 50%;
+}
