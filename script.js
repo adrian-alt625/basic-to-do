@@ -9,6 +9,8 @@ const btnContainer = document.querySelector(".button-container");
 const add = document.querySelector(".take-input");
 const main = document.querySelector(".main-container");
 const list = document.querySelector(".list");
+const saveBtn = document.querySelector(".save");
+let todos = [];
 //initiating file input (through file explorer) once the "upload" button is pressed
 upload.addEventListener("click", openFE);
 //what happens when "upload" button is pressed
@@ -34,6 +36,8 @@ function readFile() {
     text = text.map((line) => line.trim());
     console.log(text);
     change();
+    addFromFile(text);
+    console.log(todos);
   };
 }
 
@@ -56,12 +60,14 @@ function addToList() {
   if (input != "") {
     let li = document.createElement("li");
     let text = document.createTextNode(input);
+    todos.push(text.textContent);
     li.appendChild(text);
     list.appendChild(li);
     document.querySelector(".input").value = "";
     let span = document.createElement("span");
     span.innerHTML = "&#10006";
     li.appendChild(span);
+    console.log(todos);
   }
 }
 
@@ -69,8 +75,48 @@ list.addEventListener("click", function (e) {
   if (e.target.tagName === "LI") {
     e.target.classList.toggle("checked");
   } else if (e.target.tagName === "SPAN") {
+    let item = e.target.parentElement.textContent;
+    item = item.slice(0, -1);
+    console.log(item);
+    let index = todos.indexOf(item);
+    if (index !== -1) {
+      todos.splice(index, 1);
+    }
+    console.log(todos);
     e.target.parentElement.remove();
   }
 });
+
+function addFromFile(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    let li = document.createElement("li");
+    let text = document.createTextNode(arr[i]);
+    li.appendChild(text);
+    list.appendChild(li);
+    document.querySelector(".input").value = "";
+    let span = document.createElement("span");
+    span.innerHTML = "&#10006";
+    li.appendChild(span);
+    todos.push(arr[i]);
+  }
+}
+
+function downloadFile() {
+  let filename = prompt("Enter desired filename: ");
+  let contents = todos;
+  contents = todos.join("\n");
+  const blob = new Blob([contents], { type: "text/plain" }); // Create a Blob
+  const url = URL.createObjectURL(blob); // Generate a temporary URL
+
+  const a = document.createElement("a"); // Create a hidden <a> element
+  a.href = url;
+  a.download = filename; // Set the file name
+  document.body.appendChild(a);
+  a.click(); // Simulate a click
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url); // Clean up the URL
+}
+
+saveBtn.addEventListener("click", downloadFile);
 
 // ADD A TOGGLE FOR DARK AND LIGHT MODE (CHANGES THE BACKGROUND GRADIENT)
